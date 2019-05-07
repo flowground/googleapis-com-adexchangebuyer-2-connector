@@ -1,0 +1,616 @@
+{
+    "title": "Ad Exchange Buyer API II",
+    "description": "Accesses the latest features for managing Ad Exchange accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.",
+    "docsUrl": "https://developers.google.com/ad-exchange/buyer-rest/reference/rest/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/adexchangebuyer2/v2beta1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://adexchangebuyer.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 implicit authentication",
+                "viewClass": "OAuthFieldView"
+            },
+            "Oauth2c": {
+                "label": "Oauth 2.0 accessCode authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://accounts.google.com/o/oauth2/token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "adexchangebuyer2_accounts_clients_list": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_list.js",
+            "title": "Lists all the clients for the current sponsor buyer.",
+            "description": "Lists all the clients for the current sponsor buyer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_create": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_create.js",
+            "title": "Creates a new client buyer.",
+            "description": "Creates a new client buyer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_get": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_get.js",
+            "title": "Gets a client buyer with a given client account ID.",
+            "description": "Gets a client buyer with a given client account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_update": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_update.js",
+            "title": "Updates an existing client buyer.",
+            "description": "Updates an existing client buyer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_invitations_list": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_invitations_list.js",
+            "title": "Lists all the client users invitations for a client\nwith a given account ID.",
+            "description": "Lists all the client users invitations for a client\nwith a given account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_invitations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_invitations_create": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_invitations_create.js",
+            "title": "Creates and sends out an email invitation to access\nan Ad Exchange client buyer account.",
+            "description": "Creates and sends out an email invitation to access\nan Ad Exchange client buyer account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_invitations_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_invitations_get": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_invitations_get.js",
+            "title": "Retrieves an existing client user invitation.",
+            "description": "Retrieves an existing client user invitation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_invitations_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_users_list": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_users_list.js",
+            "title": "Lists all the known client users for a specified\nsponsor buyer account ID.",
+            "description": "Lists all the known client users for a specified\nsponsor buyer account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_users_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_users_get": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_users_get.js",
+            "title": "Retrieves an existing client user.",
+            "description": "Retrieves an existing client user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_users_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_clients_users_update": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_clients_users_update.js",
+            "title": "Updates an existing client user.\nOnly the user status can be changed on update.",
+            "description": "Updates an existing client user.\nOnly the user status can be changed on update.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_clients_users_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_list": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_list.js",
+            "title": "Lists creatives.",
+            "description": "Lists creatives.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_create": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_create.js",
+            "title": "Creates a creative.",
+            "description": "Creates a creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_get": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_get.js",
+            "title": "Gets a creative.",
+            "description": "Gets a creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_update": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_update.js",
+            "title": "Updates a creative.",
+            "description": "Updates a creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_dealAssociations_list": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_dealAssociations_list.js",
+            "title": "List all creative-deal associations.",
+            "description": "List all creative-deal associations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_dealAssociations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_dealAssociations_add": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_dealAssociations_add.js",
+            "title": "Associate an existing deal with a creative.",
+            "description": "Associate an existing deal with a creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_dealAssociations_add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_dealAssociations_remove": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_dealAssociations_remove.js",
+            "title": "Remove the association between a deal and a creative.",
+            "description": "Remove the association between a deal and a creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_dealAssociations_remove.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_stopWatching": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_stopWatching.js",
+            "title": "Stops watching a creative. Will stop push notifications being sent to the\ntopics when the creative changes status.",
+            "description": "Stops watching a creative. Will stop push notifications being sent to the\ntopics when the creative changes status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_stopWatching.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_accounts_creatives_watch": {
+            "main": "./lib/actions/adexchangebuyer2_accounts_creatives_watch.js",
+            "title": "Watches a creative. Will result in push notifications being sent to the\ntopic when the creative changes status.",
+            "description": "Watches a creative. Will result in push notifications being sent to the\ntopic when the creative changes status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_accounts_creatives_watch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_bidMetrics_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_bidMetrics_list.js",
+            "title": "Lists all metrics that are measured in terms of number of bids.",
+            "description": "Lists all metrics that are measured in terms of number of bids.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_bidMetrics_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_bidResponseErrors_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_bidResponseErrors_list.js",
+            "title": "List all errors that occurred in bid responses, with the number of bid\nresponses affected for each reason.",
+            "description": "List all errors that occurred in bid responses, with the number of bid\nresponses affected for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_bidResponseErrors_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_bidResponsesWithoutBids_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_bidResponsesWithoutBids_list.js",
+            "title": "List all reasons for which bid responses were considered to have no\napplicable bids, with the number of bid responses affected for each reason.",
+            "description": "List all reasons for which bid responses were considered to have no\napplicable bids, with the number of bid responses affected for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_bidResponsesWithoutBids_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_filteredBidRequests_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_filteredBidRequests_list.js",
+            "title": "List all reasons that caused a bid request not to be sent for an\nimpression, with the number of bid requests not sent for each reason.",
+            "description": "List all reasons that caused a bid request not to be sent for an\nimpression, with the number of bid requests not sent for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_filteredBidRequests_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_filteredBids_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_list.js",
+            "title": "List all reasons for which bids were filtered, with the number of bids\nfiltered for each reason.",
+            "description": "List all reasons for which bids were filtered, with the number of bids\nfiltered for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_filteredBids_creatives_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_creatives_list.js",
+            "title": "List all creatives associated with a specific reason for which bids were\nfiltered, with the number of bids filtered for each creative.",
+            "description": "List all creatives associated with a specific reason for which bids were\nfiltered, with the number of bids filtered for each creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_creatives_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_filteredBids_details_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_details_list.js",
+            "title": "List all details associated with a specific reason for which bids were\nfiltered, with the number of bids filtered for each detail.",
+            "description": "List all details associated with a specific reason for which bids were\nfiltered, with the number of bids filtered for each detail.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_filteredBids_details_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_impressionMetrics_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_impressionMetrics_list.js",
+            "title": "Lists all metrics that are measured in terms of number of impressions.",
+            "description": "Lists all metrics that are measured in terms of number of impressions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_impressionMetrics_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_losingBids_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_losingBids_list.js",
+            "title": "List all reasons for which bids lost in the auction, with the number of\nbids that lost for each reason.",
+            "description": "List all reasons for which bids lost in the auction, with the number of\nbids that lost for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_losingBids_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_nonBillableWinningBids_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_nonBillableWinningBids_list.js",
+            "title": "List all reasons for which winning bids were not billable, with the number\nof bids not billed for each reason.",
+            "description": "List all reasons for which winning bids were not billable, with the number\nof bids not billed for each reason.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_nonBillableWinningBids_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_delete": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_delete.js",
+            "title": "Deletes the requested filter set from the account with the given account\nID.",
+            "description": "Deletes the requested filter set from the account with the given account\nID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_get": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_get.js",
+            "title": "Retrieves the requested filter set for the account with the given account\nID.",
+            "description": "Retrieves the requested filter set for the account with the given account\nID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_list": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_list.js",
+            "title": "Lists all filter sets for the account with the given account ID.",
+            "description": "Lists all filter sets for the account with the given account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "adexchangebuyer2_bidders_accounts_filterSets_create": {
+            "main": "./lib/actions/adexchangebuyer2_bidders_accounts_filterSets_create.js",
+            "title": "Creates the specified filter set for the account with the given account ID.",
+            "description": "Creates the specified filter set for the account with the given account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/adexchangebuyer2_bidders_accounts_filterSets_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
