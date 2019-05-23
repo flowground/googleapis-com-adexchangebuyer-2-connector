@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the Ad Exchange Buyer API II API (version v2beta1).
 
 Generated from: https://api.apis.guru/v2/specs/googleapis.com/adexchangebuyer2/v2beta1/swagger.json<br/>
-Generated at: 2019-05-07T17:41:05+03:00
+Generated at: 2019-05-23T12:12:54+03:00
 
 ## API Description
 
